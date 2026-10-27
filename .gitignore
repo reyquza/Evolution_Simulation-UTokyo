@@ -1,0 +1,30 @@
+# Python-generated files
+__pycache__/
+*.py[oc]
+build/
+dist/
+wheels/
+*.egg-info
+
+# Virtual environments
+.venv
+
+# Private teaching materials and items awaiting local review
+/course_materials/
+/course materials/
+/unneed/
+/unnneed/
+
+# Local preparation and history-free publication bundles
+/tmp/
+/public_export/
+/publication_bundle.zip
+/PUBLICATION_REVIEW.md
+/publication_manifest.json
+
+# Reports are maintained as sanitized Markdown only
+*.pdf
+.env
+.env.*
+!.env.example
+.ipynb_checkpoints/

@@ -4,7 +4,7 @@
 
 I first ran the course baseline comparing asexual and sexual populations. The horizontal axis shows generations; the vertical axis shows mean mutations per chromosome.
 
-![Beneficial mutations introduced only at initialization](Figure_1.png)
+![Beneficial mutations introduced only at initialization](beneficial_mutations_initial_only.png)
 
 The asexual population initially improved quickly but plateaued near three mutations. The sexual population started more slowly, then reached approximately 7.5 by generation 80.
 
@@ -16,15 +16,15 @@ The baseline teaching code is excluded from the public files. This figure record
 
 With mutation effect -1, population size 100, initial mutation probability 0.1, 10 loci, and baseline fitness 2, sex was not advantageous.
 
-![Removal of deleterious mutations at initial probability 0.1](2.png)
+![Removal of deleterious mutations at initial probability 0.1](deleterious_mutations_initial_probability_0_1.png)
 
 I explored greater initial mutation probabilities and more loci, raising baseline fitness to 10 to reduce immediate extinction.
 
-![Deleterious mutations at initial probability 0.5](5.png)
+![Deleterious mutations at initial probability 0.5](deleterious_mutations_initial_probability_0_5.png)
 
-[Parameter-sweep source](main3.py)
+[Parameter-sweep source](initial_mutation_load_sweep.py)
 
-![Sweeps of initial mutation probability and number of loci](4.png)
+![Sweeps of initial mutation probability and number of loci](initial_mutation_probability_and_loci_sweep.png)
 
 Here $p$ is the probability of a mutated locus **at initialization**, not during reproduction. Asexual populations removed mutations more effectively at $p\leq0.3$; sexual populations had fewer mutations from about $p=0.4$ upward. The locus-count effect was nonmonotonic, and five replicates are insufficient for a general conclusion.
 
@@ -44,11 +44,11 @@ This resembles a reason recombination can counter mutation accumulation, but it 
 
 I also ran the continuous-mutation course baseline. The first run used population 100, nominal mutation parameter 0.01, mutation effect 2, 10 loci, and baseline fitness 1.
 
-![Continuous beneficial mutation with baseline settings](3.png)
+![Continuous beneficial mutation with baseline settings](continuous_beneficial_mutations_baseline.png)
 
 The next run used population 100, nominal parameter 0.1, mutation effect 2, 10 loci, and baseline fitness 2.
 
-![Continuous mutation with comparison settings](3_continuous_same_1.png)
+![Continuous mutation with comparison settings](continuous_beneficial_mutations_comparison.png)
 
 Continuous mutation lets asexual lineages exceed the best initial genotype. In these recorded runs, asexual populations accumulated mutations faster. Recombination can assemble favorable combinations or break them apart.
 
@@ -64,7 +64,7 @@ The teaching implementation is kept privately. Archived parameter settings need 
 
 ## 4. Extension: host–virus coevolution
 
-[Simulation](red_queen_virus.py) · [Detailed discussion](red_queen_discussion.md)
+[Simulation](host_virus_coevolution.py) · [Detailed discussion](host_virus_coevolution_discussion.md)
 
 I wanted to test whether evolving parasites could favor sex despite mate-search costs. I developed the model with generative AI assistance and used an AI editor to help implement and vectorize it. The infection criterion is an assumption, not an empirical formula.
 
@@ -74,7 +74,7 @@ Sexual reproduction is weighted by the probability of finding a sexual mate in 1
 
 The original experiment compared no viruses, static viruses, and evolving viruses for 250 generations with 20 trials per condition.
 
-![Archived coevolution comparison](red_queen_result.png)
+![Archived coevolution comparison](host_virus_coevolution_results.png)
 
 The original discussion reported final sexual frequencies of 0.194, 0.233, and 0.550, respectively.
 
@@ -90,8 +90,8 @@ Follow-up work could vary infection thresholds, generation-time ratios, and mati
 
 ## Other experiments
 
-- [NumPy deleterious-mutation exploration](main.py).
-- [Simulation versus recurrence approximation](main2.py).
-- [Alternative repeated simulation and theoretical comparison](new.py).
+- [NumPy deleterious-mutation exploration](deleterious_mutations_numpy.py).
+- [Simulation versus recurrence approximation](recombination_theory_comparison.py).
+- [Alternative repeated simulation and theoretical comparison](recombination_replicate_comparison.py).
 
 Course-derived baselines are separated from this public collection. See the provenance notes for course-model and AI-assistance disclosures.

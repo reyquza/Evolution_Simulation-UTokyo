@@ -28,3 +28,6 @@ wheels/
 .env.*
 !.env.example
 .ipynb_checkpoints/
+
+# New simulation outputs; archived report figures are tracked separately
+generated/

@@ -2,15 +2,15 @@
 
 ## 1. Fitness, fixation probability, and time to fixation
 
-[Fixation experiment](main.py)
+[Fixation experiment](fitness_fixation_sweep.py)
 
 I used a discrete stochastic haploid model based on the course exercise. Initially there is one A individual and $N-1$ a individuals. Reproduction follows integer fitness, and random sampling limits the next generation to the population size.
 
 I held the fitness of a at 2 and varied A's fitness from 1 to 15. Each setting used 50 trials of at most 100 generations. I compared populations of 100 and 1,000.
 
-![Fixation probability and conditional fixation time for N=100](task1_Psize100.png)
+![Fixation probability and conditional fixation time for N=100](fitness_fixation_population_100.png)
 
-![Fixation probability and conditional fixation time for N=1000](task1_Psize1000.png)
+![Fixation probability and conditional fixation time for N=1000](fitness_fixation_population_1000.png)
 
 Increasing A's fitness generally increased observed fixation probability and reduced the time among successful trials. Near-100% fixation in 50 trials is an empirical frequency, not a guarantee.
 
@@ -20,7 +20,7 @@ The code records zero time when no trials fix. Such points mean "no observed fix
 
 ## 2. Fisher's fundamental theorem of natural selection
 
-[Main experiment](main3.py) · [Earlier implementation](main2.py)
+[Main experiment](fitness_variance_selection.py) · [Related allele-frequency experiment](allele_frequency_trajectories.py)
 
 I investigated the relationship between fitness variation and changing mean fitness using 1,000 individuals, 100 generations, and 30 trials per condition. Fitness of a remained 2; fitness of A was 3, 4, or 5. Each trial began with a single A individual.
 
@@ -30,7 +30,7 @@ $$
 x=\frac{V(W)}{\bar W},\qquad y=\Delta\bar W.
 $$
 
-![Change in mean fitness against fitness variance divided by mean fitness](task2.png)
+![Change in mean fitness against fitness variance divided by mean fitness](fitness_variance_selection.png)
 
 The points cluster around $y=x$, consistent with the simplified relationship
 

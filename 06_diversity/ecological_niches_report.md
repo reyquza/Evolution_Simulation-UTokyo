@@ -2,7 +2,7 @@
 
 ## 1. One surviving type or two coexisting types?
 
-[Main experiment and clustering](main.py)
+[Main experiment and clustering](resource_competition_analysis.py)
 
 I extended a two-resource competition exercise from 10 to 100 trials. Traits from 0 to 100 represent a resource-acquisition tradeoff: lower values favor resource a, higher values favor b. I compared surviving traits when one or two types remained.
 
@@ -10,7 +10,7 @@ I calculated competition coefficients from resource-use overlap, inspired by Mac
 
 The original report described 50 units of each resource with linear acquisition probabilities. The saved implementation uses `Psize=101` and `current_beta=Psize-current_alpha`, so `alpha_num=50` actually allocates 50 and 51 slots. This discrepancy is documented for reproducibility.
 
-![Surviving traits under approximately balanced resources](1.png)
+![Surviving traits under approximately balanced resources](surviving_traits_balanced_resources.png)
 
 | Recorded quantity | Value |
 | --- | ---: |
@@ -37,7 +37,7 @@ Settings: `analyze(trials=100, alpha_num=70, periodic_mode=False)`.
 
 The intended comparison was a 70:30 split; the saved implementation uses 70:31.
 
-![Surviving traits when resource a is more abundant](2-1.png)
+![Surviving traits when resource a is more abundant](surviving_traits_unequal_resources.png)
 
 Cluster centers were 10.6, 37.9, and 70.9. Survivors shifted toward stronger acquisition of a, including generalists below trait 50.
 
@@ -49,7 +49,7 @@ Settings: `analyze(trials=100, alpha_num=50, periodic_mode=True)`.
 
 Resource a alternates between 70 and 30 slots every 100 generations; b receives the remaining slots. The intended conceptual comparison was 70:30 versus 30:70.
 
-![Surviving traits under periodically changing resources](2-2.png)
+![Surviving traits under periodically changing resources](surviving_traits_periodic_resources.png)
 
 Intermediate types commonly survived alone. Specialists can prosper during one phase and decline sharply in the next, while generalists can use both resources. I omitted k-means interpretation for this scenario.
 
@@ -57,9 +57,9 @@ The original discussion connected this mechanism to changing resources and selec
 
 ## Other implementations
 
-- [Alternative periodic and nonlinear model](main1.py), with 80:21 and 20:81 phases.
-- [Nonlinear competition-coefficient exploration](main2.py).
-- [Continuous Lotka–Volterra comparison](main3.py).
+- [Alternative periodic and nonlinear model](periodic_resource_competition.py), with 80:21 and 20:81 phases.
+- [Nonlinear competition-coefficient exploration](nonlinear_resource_competition.py).
+- [Continuous Lotka–Volterra comparison](periodic_lotka_volterra.py).
 
 ## References and provenance
 

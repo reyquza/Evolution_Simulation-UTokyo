@@ -2,21 +2,21 @@
 
 ## Implementation and AI assistance
 
-I refactored the spatial course model into [a simulation function](main.py), then used it for sweeps and population-history analysis. I used generative AI for much of this week's code, reviewed it line by line, and revised it as needed.
+I refactored the spatial course model into [a simulation function](spatial_host_parasite_model.py), then used it for sweeps and population-history analysis. I used generative AI for much of this week's code, reviewed it line by line, and revised it as needed.
 
 The square-grid model combines local host reproduction, food limits, parasite appearance, and movement.
 
 ## 1. How much space permits coexistence?
 
-[Coarse sweep](main1.py) · [Repeated sweep](main2.py) · [Population histories](main3.py)
+[Coarse sweep](grid_size_survival_sweep.py) · [Repeated sweep](grid_size_coexistence_trials.py) · [Population histories](metapopulation_dynamics.py)
 
 I first tested grid widths 10–40 in increments of 5, recording survival after 500 generations.
 
-![Coarse grid-width sweep](main3%2010,%2015,%2020.png)
+![Coarse grid-width sweep](grid_size_survival_outcomes.png)
 
 The transition appeared near widths 10–15. I examined nearby widths with 10 trials each.
 
-![Coexistence frequencies near the apparent transition](size.png)
+![Coexistence frequencies near the apparent transition](grid_size_coexistence_probability.png)
 
 Coexistence generally became more likely in larger grids, with fluctuations expected from the small trial count.
 
@@ -26,19 +26,19 @@ Hosts can survive in one patch while parasites deplete another. Small grids prov
 
 For a 30-by-30 grid, I compared total populations with those in the central patch at [15, 15].
 
-![Total populations and populations in a central patch](size_dyna.png)
+![Total populations and populations in a central patch](local_and_global_population_dynamics.png)
 
 Local host counts sometimes approached zero while both populations persisted globally. Parasite increases followed host increases, producing delayed cycles reminiscent of predator–prey dynamics. Spatially displaced cycles can allow global persistence despite local collapse.
 
 ## 3. Migration and food availability
 
-[Parameter sweep](main4.py)
+[Parameter sweep](migration_food_coexistence_sweep.py)
 
 I used width 15 with 20 trials per setting. Width 30 had shown no extinction in my exploratory runs.
 
 Migration parameter Q took values 0.02, 0.04, 0.10, 0.20, 0.50, and 1.00. Food took values 50, 150, 250, 350, 450, and 550. Other parameters used baseline values, including parasite-appearance parameter P=0.010.
 
-![Migration and food sweeps](Figure_1.png)
+![Migration and food sweeps](migration_food_coexistence_probability.png)
 
 Higher migration reduced coexistence. Faster movement weakens spatial separation, allowing parasites to reach patches where hosts would otherwise escape temporarily.
 
@@ -52,4 +52,4 @@ Coexistence means survival at a finite observation time. Integer-threshold movem
 
 The original report consulted the encyclopedia entry on metapopulations on June 25, 2026. [English background reading](https://en.wikipedia.org/wiki/Metapopulation).
 
-[Alternative exploratory implementation](new.py).
+[Alternative exploratory implementation](spatial_host_parasite_numba.py).

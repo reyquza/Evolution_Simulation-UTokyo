@@ -197,7 +197,7 @@ def main():
     parser.add_argument("--seed", type=int, default=42)
     parser.add_argument("--trials", type=int, default=20)
     parser.add_argument("--generations", type=int, default=250)
-    parser.add_argument("--output", default="generated/red_queen_result.png")
+    parser.add_argument("--output", default="generated/host_virus_coevolution_results.png")
     parser.add_argument("--no-show", action="store_true")
     args = parser.parse_args()
     if args.trials < 1 or args.generations < 1:

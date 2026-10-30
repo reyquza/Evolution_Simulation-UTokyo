@@ -1,6 +1,6 @@
 import matplotlib.pyplot as plt
 from concurrent.futures import ProcessPoolExecutor
-from main import run_simulation 
+from spatial_host_parasite_model import run_simulation 
 
 # Grid widths to test
 size_list = [10, 15, 20, 25, 30, 35, 40]

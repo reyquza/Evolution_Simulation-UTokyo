@@ -1,6 +1,6 @@
 import numpy as np
 import matplotlib.pyplot as plt
-from neutral import neutral_evolution
+from neutral_drift_model import neutral_evolution
 
 population_sizes = [10, 20, 50, 100, 200, 500, 1000]
 trial_count = 10000
@@ -24,5 +24,5 @@ plt.xlabel("population size (N)")
 plt.ylabel("fixation time")
 plt.legend()
 plt.grid(True)
-plt.savefig("2.png")
+plt.savefig("fixation_time_population_sweep.png")
 plt.show()

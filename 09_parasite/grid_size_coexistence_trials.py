@@ -1,6 +1,6 @@
 import matplotlib.pyplot as plt
 from concurrent.futures import ProcessPoolExecutor
-from main import run_simulation  # Import the reusable simulation
+from spatial_host_parasite_model import run_simulation  # Import the reusable simulation
 
 # Examine the region around grid widths 10 to 15
 size_list = list(range(8, 19))

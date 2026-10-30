@@ -2,21 +2,21 @@
 
 ## 1. Conditional time to fixation
 
-[Simulation engine](neutral.py) · [Repeated experiment](main.py)
+[Simulation engine](neutral_drift_model.py) · [Repeated experiment](fixation_time_replicates.py)
 
 I simulated neutral drift in a haploid Wright–Fisher model, starting with one mutant in a population of $N$. I measured the average time **conditional on fixation**, rather than averaging over both fixation and loss.
 
 For $N=100$, the recorded means lie near $2N=200$, below $N\ln N\approx461$.
 
-![Mean fixation time from repeated experiments with N=100](1.png)
+![Mean fixation time from repeated experiments with N=100](fixation_time_population_100.png)
 
 ## 2. Scaling with population size
 
-[Population-size sweep](main2.py)
+[Population-size sweep](fixation_time_population_sweep.py)
 
 I tested $N=10,20,50,100,200,500,1000$, with 10,000 trials and a limit of 10,000 generations per trial.
 
-![Conditional fixation time across population sizes](2.png)
+![Conditional fixation time across population sizes](fixation_time_population_sweep.png)
 
 The means were close to $2N$, while the spread increased with population size. Some individual times approached or exceeded the $N\ln N$ comparison curve, but that curve did not describe the mean well.
 
@@ -36,7 +36,7 @@ The finite generation limit censors long trajectories. Few initially rare mutant
 
 ## 3. Extension: a temporary bottleneck
 
-[Bottleneck experiment](main3.py)
+[Bottleneck experiment](population_bottleneck_drift.py)
 
 I compared a constant population of 500 with one falling from 500 to 10 during generations 80–99, then returning to 500. Both start at mutant frequency 0.1, with 20 trajectories over 200 generations.
 

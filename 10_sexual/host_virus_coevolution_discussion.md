@@ -1,6 +1,6 @@
 # Sexual reproduction under evolving viral pressure
 
-[Source](red_queen_virus.py) · [Week 10 report](report.md)
+[Source](host_virus_coevolution.py) · [Week 10 report](sexual_reproduction_report.md)
 
 ## Model and assistance
 
@@ -22,7 +22,7 @@ The original report compared three conditions for 250 generations and 20 trials 
 2. Fixed viral genotypes.
 3. Viruses evolving through differential reproduction and mutation.
 
-![Archived host–virus experiment](red_queen_result.png)
+![Archived host–virus experiment](host_virus_coevolution_results.png)
 
 ## Historical results
 

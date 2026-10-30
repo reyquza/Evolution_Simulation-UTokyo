@@ -1,6 +1,6 @@
 import numpy as np
 import matplotlib.pyplot as plt
-from neutral import neutral_evolution
+from neutral_drift_model import neutral_evolution
 
 trial = 20
 population_size = 100

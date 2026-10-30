@@ -8,7 +8,7 @@ The first step was a deliberately simple competition model. Four hypothetical st
 
 ## Model and results
 
-[Simulation source](main.py)
+[Simulation source](viral_variant_competition.py)
 
 The simulation runs for 300 days with growth rates 0.20, 0.28, 0.40, and 0.65, a common removal rate of 0.10, and carrying capacity 1,000. Strains appear on days 0, 60, 120, and 180. The first strain starts with 10 individuals; subsequent strains enter with five.
 
@@ -16,7 +16,7 @@ $$
 n_i(t+1)=\max\left(0,n_i(t)+r_i n_i(t)\left(1-\frac{\sum_j n_j(t)}{K}\right)-m n_i(t)\right).
 $$
 
-![Replacement of four hypothetical variants over 300 days](result.png)
+![Replacement of four hypothetical variants over 300 days](viral_variant_replacement.png)
 
 The chart illustrates replacement as faster-growing strains enter. The final strain's label, "Goal," reflects my original motivation; the model contains no mechanism for virulence, immunity, or clinical outcomes. Its growth-rate assumptions drive the result.
 

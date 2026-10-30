@@ -2,7 +2,7 @@
 
 Python experiments exploring natural selection, genetic drift, ecological diversity, and host–virus coevolution. Developed for Advanced Science at the University of Tokyo; course grade: **98/100**.
 
-I extended weekly exercises with repeated trials, parameter sweeps, theoretical comparisons, and additional experiments on bottlenecks, assortative mating, and evolving viral pressure. The reports explain the assumptions, historical results, limitations, and use of AI assistance.
+I extended weekly exercises with repeated trials, parameter sweeps, theoretical comparisons, and additional experiments on bottlenecks, assortative mating, and evolving viral pressure. The reports explain the assumptions, historical results, limitations.
 
 ![Archived host–virus coevolution results](10_sexual/host_virus_coevolution_results.png)
 
@@ -61,11 +61,3 @@ Most original experiments open Matplotlib windows and some run large parameter s
 | `10_sexual` | [Deleterious mutations](10_sexual/deleterious_mutations_numpy.py), [theoretical comparison](10_sexual/recombination_theory_comparison.py), [initial mutation-load sweep](10_sexual/initial_mutation_load_sweep.py), [replicate comparison](10_sexual/recombination_replicate_comparison.py), [host–virus coevolution](10_sexual/host_virus_coevolution.py) |
 
 The [coevolution discussion](10_sexual/host_virus_coevolution_discussion.md) gives a focused explanation of the final extension.
-
-## Naming and reproducibility
-
-Filenames use descriptive English `snake_case`. Models end in `_model.py`; parameter studies use `_sweep.py` or `_trials.py`; reports identify their subject. Figure names describe the experiment or comparison, with parameters included where needed to distinguish saved results.
-
-The original scripts are exploratory coursework. Some saved defaults differ from the settings reported in the historical figures, and the reports document known discrepancies. Renaming the files does not alter the simulation algorithms or the archived images.
-
-Lecture handouts and recognizable starter files are kept locally in the ignored `course_materials/` folder. Images awaiting review are in the ignored `unneed/` folder. The reports distinguish course models, student extensions, and AI assistance; course-derived source remains subject to the course's publication policy.
